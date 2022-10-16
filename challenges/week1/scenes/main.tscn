@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://challenges/week1/scenes/player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://challenges/week1/scenes/map/room1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://challenges/week1/scenes/main.gd" type="Script" id=3]
+[ext_resource path="res://challenges/week1/gfx/npc/npc2.png" type="Texture" id=4]
+[ext_resource path="res://challenges/week1/scenes/npc/npc.tscn" type="PackedScene" id=5]
+[ext_resource path="res://challenges/week1/gfx/npc/npc1.png" type="Texture" id=6]
+[ext_resource path="res://challenges/week1/gfx/map/gui.png" type="Texture" id=7]
+
+[node name="main" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="room1" parent="." instance=ExtResource( 2 )]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="player" parent="YSort" instance=ExtResource( 1 )]
+z_as_relative = false
+
+[node name="npcOldman" parent="YSort" instance=ExtResource( 5 )]
+z_as_relative = false
+npc_texture = ExtResource( 4 )
+npc_greetings = [ "Hello, my friend.", "Greetings, foreigner!" ]
+npc_farewells = [ "Good bye!", "See you." ]
+
+[node name="npcWoman" parent="YSort" instance=ExtResource( 5 )]
+npc_texture = ExtResource( 6 )
+npc_greetings = [ "It's a great time to see you!", "Mmmm." ]
+npc_farewells = [ "Come back soon!", "Bye, bye." ]
+
+[node name="gui" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="gui"]
+margin_left = 902.0
+margin_top = 7.0
+margin_right = 1002.0
+margin_bottom = 98.0
+texture = ExtResource( 7 )
+stretch_mode = 1

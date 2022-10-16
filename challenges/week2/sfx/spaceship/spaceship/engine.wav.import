@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/engine.wav-0936aced69db6cbb94444f9e8f59b222.sample"
+
+[deps]
+
+source_file="res://challenges/week2/sfx/spaceship/spaceship/engine.wav"
+dest_files=[ "res://.import/engine.wav-0936aced69db6cbb94444f9e8f59b222.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=1000
+edit/loop_end=16000
+compress/mode=0

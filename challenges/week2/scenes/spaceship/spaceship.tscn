@@ -1,0 +1,63 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://challenges/week2/gfx/spaceship/spaceship.png" type="Texture" id=1]
+[ext_resource path="res://challenges/week2/scenes/spaceship/spaceship.gd" type="Script" id=2]
+[ext_resource path="res://challenges/week2/gfx/spaceship/engine.png" type="Texture" id=3]
+[ext_resource path="res://challenges/week2/sfx/spaceship/spaceship/engine.wav" type="AudioStream" id=4]
+[ext_resource path="res://challenges/week2/sfx/spaceship/spaceship/explosion.wav" type="AudioStream" id=5]
+[ext_resource path="res://challenges/week2/gfx/spaceship/spaceship_explode2.png" type="Texture" id=6]
+[ext_resource path="res://challenges/week2/gfx/spaceship/spaceship_explode5.png" type="Texture" id=7]
+[ext_resource path="res://challenges/week2/gfx/spaceship/spaceship_explode4.png" type="Texture" id=8]
+[ext_resource path="res://challenges/week2/gfx/spaceship/spaceship_explode1.png" type="Texture" id=9]
+[ext_resource path="res://challenges/week2/gfx/spaceship/spaceship_explode6.png" type="Texture" id=10]
+[ext_resource path="res://challenges/week2/gfx/spaceship/spaceship_explode3.png" type="Texture" id=11]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "explosion",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9, 23.5 )
+
+[node name="spaceship" type="KinematicBody2D"]
+position = Vector2( 484, 284 )
+script = ExtResource( 2 )
+
+[node name="ship" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="engine" type="Sprite" parent="ship"]
+position = Vector2( 0, 35 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="cannon" type="Position2D" parent="ship"]
+position = Vector2( 0, -36 )
+
+[node name="shipAnimations" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "explosion"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="shoots" type="Node2D" parent="."]
+
+[node name="explosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="engineSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
