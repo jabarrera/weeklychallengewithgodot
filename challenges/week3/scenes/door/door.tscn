@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://challenges/week3/gfx/map/door4.png" type="Texture" id=1]
+[ext_resource path="res://challenges/week3/gfx/map/door1.png" type="Texture" id=2]
+[ext_resource path="res://challenges/week3/gfx/map/door2.png" type="Texture" id=3]
+[ext_resource path="res://challenges/week3/gfx/map/door3.png" type="Texture" id=4]
+[ext_resource path="res://challenges/week3/scenes/door/door.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "abrir",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "cerrada",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "cerrar",
+"speed": 10.0
+} ]
+
+[node name="door" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="door_animated_sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "cerrada"
+
+[node name="opening_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="closing_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="shield_shoot" type="ColorRect" parent="."]
+margin_left = -104.0
+margin_top = -179.0
+margin_right = 130.0
+margin_bottom = 180.0
+color = Color( 1, 1, 1, 0 )
+
+[connection signal="animation_finished" from="door_animated_sprite" to="." method="_on_door_animated_sprite_animation_finished"]
+[connection signal="timeout" from="opening_timer" to="." method="_on_opening_timer_timeout"]
+[connection signal="timeout" from="closing_timer" to="." method="_on_closing_timer_timeout"]

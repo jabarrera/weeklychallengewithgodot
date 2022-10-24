@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://challenges/week3/gfx/map/bandit.png" type="Texture" id=1]
+[ext_resource path="res://challenges/week3/scenes/characters/bandit/bandit.gd" type="Script" id=2]
+[ext_resource path="res://challenges/week3/sfx/gun-sound-4.wav" type="AudioStream" id=3]
+[ext_resource path="res://challenges/week3/gfx/map/bandit_shoot.png" type="Texture" id=4]
+
+[node name="bandit" type="Area2D"]
+monitoring = false
+monitorable = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bandit_sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="shoots" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -3, 146, -12, 152, -17, 151, -23, 154, -45, 155, -62, 147, -60, 130, -38, 140, -29, 129, -38, 102, -46, 98, -39, 88, -54, 67, -43, 49, -43, 35, -27, 19, -35, 3, -43, 11, -47, 31, -59, 24, -59, 11, -67, 4, -54, -26, -53, -76, -38, -84, -41, -90, -71, -110, -70, -120, -44, -128, -27, -129, -22, -135, -21, -147, 0, -153, 5, -144, 7, -152, 22, -155, 27, -133, 33, -130, 33, -120, 50, -124, 64, -128, 71, -123, 66, -108, 47, -91, 34, -89, 29, -84, 40, -84, 49, -77, 61, -24, 63, -2, 58, 24, 42, 17, 48, 8, 40, 5, 45, -6, 35, -4, 33, 10, 39, 13, 47, 46, 58, 67, 45, 83, 51, 86, 38, 126, 39, 136, 51, 134, 63, 123, 67, 136, 53, 158, 29, 155, 18, 144, 18, 153, 6, 150, 7, 127, 15, 111, 17, 80, 34, 67, 11, 46, 1, 54, -11, 50, -26, 68, -16, 76, -11, 110, -3, 118 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="shoot_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[connection signal="input_event" from="." to="." method="_on_bandit_input_event"]
+[connection signal="timeout" from="shoot_timer" to="." method="_on_shoot_timer_timeout"]
