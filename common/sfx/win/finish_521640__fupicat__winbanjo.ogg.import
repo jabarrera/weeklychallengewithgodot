@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/finish_521640__fupicat__winbanjo.ogg-b29706b5bc076056c2f51845aa80fc00.oggstr"
+
+[deps]
+
+source_file="res://common/sfx/win/finish_521640__fupicat__winbanjo.ogg"
+dest_files=[ "res://.import/finish_521640__fupicat__winbanjo.ogg-b29706b5bc076056c2f51845aa80fc00.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

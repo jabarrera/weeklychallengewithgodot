@@ -1,0 +1,3 @@
+extends Node
+
+enum CARD_TYPES { ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT}

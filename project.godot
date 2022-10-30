@@ -15,6 +15,10 @@ run/main_scene="res://launcher/scenes/main/main.tscn"
 boot_splash/bg_color=Color( 0.0509804, 0.0509804, 0.0509804, 1 )
 config/icon="res://icon.png"
 
+[autoload]
+
+Week4Global="*res://challenges/week4/scenes/Week4Global.gd"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
