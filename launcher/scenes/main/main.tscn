@@ -1,10 +1,37 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://launcher/scenes/main/comboBoxWeeks.gd" type="Script" id=1]
 [ext_resource path="res://launcher/scenes/main/gfx/arrowdown.png" type="Texture" id=2]
 [ext_resource path="res://launcher/scenes/main/RunButton.gd" type="Script" id=3]
+[ext_resource path="res://launcher/scenes/main/main.gd" type="Script" id=4]
+[ext_resource path="res://common/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 12
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 12
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 12
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+extra_spacing_bottom = 5
+font_data = ExtResource( 5 )
 
 [node name="main" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="background" type="ColorRect" parent="."]
 margin_left = -13.0
@@ -17,17 +44,22 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
+margin_left = 150.0
 margin_top = 160.0
-margin_right = 1017.0
+margin_right = 1167.0
 margin_bottom = 174.0
+custom_colors/font_color = Color( 0.835294, 0.788235, 0.788235, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Select a week to run"
 align = 1
 
 [node name="comboBoxWeeks" type="Button" parent="."]
-margin_left = 406.0
+margin_left = 556.0
 margin_top = 192.0
-margin_right = 608.0
+margin_right = 758.0
 margin_bottom = 214.0
+custom_colors/font_color = Color( 0.870588, 0.811765, 0.811765, 1 )
+custom_fonts/font = SubResource( 5 )
 text = "None"
 icon = ExtResource( 2 )
 align = 0
@@ -40,17 +72,40 @@ margin_left = 16.0
 margin_top = 22.0
 margin_right = 202.0
 margin_bottom = 156.0
+custom_colors/font_color_selected = Color( 0.717647, 0.129412, 0.129412, 1 )
+custom_colors/font_color = Color( 0.870588, 0.792157, 0.792157, 1 )
+custom_fonts/font = SubResource( 6 )
 
 [node name="RunButton" type="Button" parent="."]
-margin_left = 406.0
+margin_left = 556.0
 margin_top = 372.0
-margin_right = 608.0
+margin_right = 758.0
 margin_bottom = 407.0
+custom_colors/font_color = Color( 0.807843, 0.74902, 0.74902, 1 )
+custom_fonts/font = SubResource( 4 )
 disabled = true
 text = "Run"
 script = ExtResource( 3 )
 
+[node name="screenCapture" type="TextureRect" parent="."]
+margin_left = 48.0
+margin_top = 85.0
+margin_right = 447.0
+margin_bottom = 300.0
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 48.0
+margin_top = 312.0
+margin_right = 447.0
+margin_bottom = 571.0
+custom_colors/default_color = Color( 0.686275, 0.686275, 0.686275, 1 )
+custom_fonts/bold_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+
 [connection signal="pressed" from="comboBoxWeeks" to="comboBoxWeeks" method="_on_comboBoxWeeks_pressed"]
+[connection signal="week_selected" from="comboBoxWeeks" to="." method="_on_comboBoxWeeks_week_selected"]
 [connection signal="week_selected" from="comboBoxWeeks" to="RunButton" method="_on_comboBoxWeeks_week_selected"]
 [connection signal="item_selected" from="comboBoxWeeks/WeekList" to="comboBoxWeeks" method="_on_WeekList_item_selected"]
 [connection signal="pressed" from="RunButton" to="RunButton" method="_on_RunButton_pressed"]

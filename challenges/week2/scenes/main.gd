@@ -7,6 +7,9 @@ const MAX_METEORS_SPAWNED = 3
 var bullet_scene = preload("res://challenges/week2/scenes/bullet/bullet.tscn")
 var meteor_scene = preload("res://challenges/week2/scenes/meteor/meteor.tscn")
 
+func _input(event):
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().change_scene(Launcher.LAUNCHER_MAIN_SCENE_PATH)
 
 func _ready():
 	randomize()

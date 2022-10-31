@@ -1,0 +1,4 @@
+[b]Week2: meteors[/b]
+
+Use your cursor keys to move your ship.
+Destroy the meteors shooting with space bar.

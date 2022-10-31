@@ -1,0 +1,4 @@
+[b]Week1: Polite NPC[/b]
+
+Use your cursor keys to move your character.
+Get close to a NPC and listen its polite greetings and farewells.

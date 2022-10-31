@@ -35,6 +35,9 @@ func _input(event):
 			shoot()
 		elif event.button_index == BUTTON_RIGHT and event.pressed:
 			reload()
+			
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().change_scene(Launcher.LAUNCHER_MAIN_SCENE_PATH)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -17,15 +17,14 @@ var second_click_card = null
 var num_matches
 
 
-# Called when the node enters the scene tree for the first time.
+func _input(event):
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().change_scene(Launcher.LAUNCHER_MAIN_SCENE_PATH)
+
 func _ready():
 	randomize()
 	start_game()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func disable_click_mouse():
 	$background.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -52,14 +51,8 @@ func start_game():
 func _on_ShowAllCardsTimer_timeout():
 	get_tree().call_group("cards", "emit_signal", "hide_me", false)
 	
-	#for card in get_tree().get_nodes_in_group("cards"):
-	#	card.emit_signal("hide_me", false)
-
 func _on_StartGameTimer_timeout():
 	get_tree().call_group("cards", "emit_signal", "show_me", false)
-	
-	#for card in get_tree().get_nodes_in_group("cards"):
-	#	card.emit_signal("show_me", false)
 		
 	$ShowAllCardsTimer.start()
 	enable_click_mouse()

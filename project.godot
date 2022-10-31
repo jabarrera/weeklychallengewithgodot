@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Week4Global="*res://challenges/week4/scenes/Week4Global.gd"
+Launcher="*res://launcher/scenes/main/launcher.gd"
 
 [gui]
 
