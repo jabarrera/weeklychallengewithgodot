@@ -14,7 +14,7 @@ func set_screenshot(week_name : String):
 	$screenCapture.texture = screenshot_image
 	
 func set_description(week_name : String):
-	var description_text = read_file_content("res://challenges/" + week_name + "/" + week_name + ".txt")
+	var description_text = read_file_content("res://challenges/" + week_name + "/" + week_name + ".desc")
 	$RichTextLabel.bbcode_text = description_text
 	
 func read_file_content(fileUri : String):
