@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/looperman-l-2345833-0288239-evan-beatz-all-i-want.mp3-40e4a2e1b852a26b71891f0406aa95d0.mp3str"
+
+[deps]
+
+source_file="res://common/sfx/music/looperman-l-2345833-0288239-evan-beatz-all-i-want.mp3"
+dest_files=[ "res://.import/looperman-l-2345833-0288239-evan-beatz-all-i-want.mp3-40e4a2e1b852a26b71891f0406aa95d0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

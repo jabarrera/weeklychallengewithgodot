@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/looperman-l-2776354-0311050-8bit-pad-mario-the-hedgehog-by-sayvmei.mp3-cc586acd3c9c9ac9c8bb0a45a002d3d0.mp3str"
+
+[deps]
+
+source_file="res://common/sfx/music/looperman-l-2776354-0311050-8bit-pad-mario-the-hedgehog-by-sayvmei.mp3"
+dest_files=[ "res://.import/looperman-l-2776354-0311050-8bit-pad-mario-the-hedgehog-by-sayvmei.mp3-cc586acd3c9c9ac9c8bb0a45a002d3d0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://challenges/week6/scenes/soundSource/soundSource.tscn" type="PackedScene" id=1]
+[ext_resource path="res://challenges/week6/scenes/map/map.tscn" type="PackedScene" id=2]
+[ext_resource path="res://common/sfx/music/looperman-l-2345833-0288239-evan-beatz-all-i-want.mp3" type="AudioStream" id=3]
+[ext_resource path="res://common/sfx/music/looperman-l-5269388-0313364-cosmic-indie-game.mp3" type="AudioStream" id=4]
+[ext_resource path="res://common/sfx/music/looperman-l-2776354-0311050-8bit-pad-mario-the-hedgehog-by-sayvmei.mp3" type="AudioStream" id=5]
+[ext_resource path="res://challenges/week6/scenes/character/character.tscn" type="PackedScene" id=6]
+[ext_resource path="res://challenges/week6/scenes/main.gd" type="Script" id=7]
+
+[node name="main" type="Node"]
+script = ExtResource( 7 )
+
+[node name="map" parent="." instance=ExtResource( 2 )]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="character" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 523, 260 )
+
+[node name="soundSource1" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 128, 110 )
+audio = ExtResource( 3 )
+
+[node name="soundSource2" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 554, 548 )
+audio = ExtResource( 5 )
+
+[node name="soundSource3" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 888, 78 )
+audio = ExtResource( 4 )

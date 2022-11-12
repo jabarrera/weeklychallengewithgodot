@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://challenges/week6/gfx/character/full_walking1.webp" type="Texture" id=1]
+[ext_resource path="res://challenges/week6/scenes/character/character.gd" type="Script" id=2]
+[ext_resource path="res://challenges/week6/gfx/character/empty_stop.webp" type="Texture" id=3]
+[ext_resource path="res://challenges/week6/gfx/character/empty_walking2.webp" type="Texture" id=4]
+[ext_resource path="res://challenges/week6/gfx/character/full_walking2.webp" type="Texture" id=5]
+[ext_resource path="res://challenges/week6/gfx/character/empty_walking1.webp" type="Texture" id=6]
+[ext_resource path="res://challenges/week6/gfx/character/full_stop.webp" type="Texture" id=7]
+[ext_resource path="res://common/sfx/clics/click_down.wav" type="AudioStream" id=8]
+[ext_resource path="res://common/sfx/clics/click_up.wav" type="AudioStream" id=9]
+[ext_resource path="res://common/sfx/error/error.wav" type="AudioStream" id=10]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "empty_stop",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "empty_walking",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "full_stop",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "full_walking",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29.5, 28 )
+
+[node name="character" type="Area2D"]
+position = Vector2( 488, 292 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "full_walking"
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, 1 )
+shape = SubResource( 1 )
+
+[node name="PickedObjectPosition" type="Position2D" parent="."]
+position = Vector2( 0, -39 )
+
+[node name="leftObjectPosition" type="Position2D" parent="."]
+position = Vector2( 0, 9 )
+
+[node name="LeaveStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="PickStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="ForbiddenStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -30.0

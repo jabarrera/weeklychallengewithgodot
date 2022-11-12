@@ -7,7 +7,7 @@
 PACKAGING_COMMAND="zip"
 PACKAGING_OPTIONS="-j" #quiet and avoid relative path information
 BUTLER="butler"
-EXPORT_DIR="../export/html5"
+EXPORT_DIR="../.export/html5"
 EXPORT_FILE_NAME="weeklygamedevchallenge.zip"
 
 

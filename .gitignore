@@ -3,7 +3,9 @@
 .import/
 export.cfg
 export_presets.cfg
-export/
+
+#Export directory ignores
+.export/
 
 # Mono-specific ignores
 .mono/
