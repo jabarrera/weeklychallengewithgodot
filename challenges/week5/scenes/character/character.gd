@@ -15,14 +15,14 @@ var time_get_new_position : int = 5
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed and $SelectionMark.visible and not mouse_under_me:
 		var original_target = $NavigationAgent2D.get_final_location()
-		$NavigationAgent2D.set_target_location(event.global_position)
+		$NavigationAgent2D.set_target_location(get_global_mouse_position())
 			
 		if (not $NavigationAgent2D.is_target_reachable()):
 			$NavigationAgent2D.set_target_location(original_target)
 			$Error.play()
 		else:
 			$SelectionMark.visible = false
-			emit_signal("destination", event.global_position)
+			emit_signal("destination", get_global_mouse_position())
 
 func _ready():
 	$NavigationAgent2D.set_target_location(position)
@@ -52,8 +52,8 @@ func _physics_process(delta):
 func random_target_position():
 	var new_location : Vector2
 	while true:
-		new_location.x = rand_range(0, get_viewport().size.x)
-		new_location.y = rand_range(0, get_viewport().size.y)
+		new_location.x = rand_range(0, get_viewport_rect().size.x)
+		new_location.y = rand_range(0, get_viewport_rect().size.y)
 		$NavigationAgent2D.set_target_location(new_location)
 		if $NavigationAgent2D.is_target_reachable():
 			emit_signal("destination", new_location)

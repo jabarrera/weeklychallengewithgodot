@@ -60,7 +60,7 @@ func _physics_process(delta):
 
 
 func can_move(new_position) -> bool:
-	if new_position.x >= 0 and new_position.x <= get_viewport().size.x and new_position.y >= 0 and new_position.y <= get_viewport().size.y:
+	if new_position.x >= 0 and new_position.x <= get_viewport_rect().size.x and new_position.y >= 0 and new_position.y <= get_viewport_rect().size.y:
 		return true
 	else:
 		$ForbiddenStreamPlayer.play()
