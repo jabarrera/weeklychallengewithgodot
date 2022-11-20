@@ -2,8 +2,7 @@
 
 **Weekly Game Development Challenge with Godot** is a Facebook public group and Mastodon account focused in game development practices using [Godot][Godot engine].
 
-[Link Facebook group][Facebook group]
-[Mastodon account][Mastodon account]
+[Link Facebook group][Facebook group] | [Mastodon account][Mastodon account]
 
 ## This project
 
