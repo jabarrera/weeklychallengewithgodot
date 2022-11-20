@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/explosion.wav-d4d563047a880e7416c075d3830764ed.sample"
+path="res://.import/vanish.wav-faf63c6f1b7164e212bdbc5f4f94c94c.sample"
 
 [deps]
 
-source_file="res://challenges/week2/sfx/spaceship/spaceship/explosion.wav"
-dest_files=[ "res://.import/explosion.wav-d4d563047a880e7416c075d3830764ed.sample" ]
+source_file="res://common/sfx/clics/vanish.wav"
+dest_files=[ "res://.import/vanish.wav-faf63c6f1b7164e212bdbc5f4f94c94c.sample" ]
 
 [params]
 

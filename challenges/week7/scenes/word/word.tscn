@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://challenges/week7/scenes/word/word.gd" type="Script" id=1]
+[ext_resource path="res://common/sfx/clics/click_key.wav" type="AudioStream" id=2]
+[ext_resource path="res://common/sfx/clics/vanish.wav" type="AudioStream" id=3]
+
+[node name="word" type="Node2D"]
+position = Vector2( 440, 266 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+word = "test"
+velocity = 50
+
+[node name="letters" type="Node2D" parent="."]
+
+[node name="KeySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="CompleteSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

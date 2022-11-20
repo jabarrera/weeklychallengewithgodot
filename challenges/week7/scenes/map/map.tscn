@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://challenges/week7/gfx/map/starfield.webp" type="Texture" id=1]
+
+[node name="map" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false

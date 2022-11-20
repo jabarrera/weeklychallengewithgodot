@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://common/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://challenges/week7/scenes/letter/letter.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7, 7 )
+
+[node name="letter" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="letter_area" type="Area2D" parent="." groups=["letters"]]
+input_pickable = false
+monitoring = false
+
+[node name="Label" type="Label" parent="letter_area"]
+margin_right = 16.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 1 )
+text = "A"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="letter_area"]
+position = Vector2( 7, 7 )
+shape = SubResource( 2 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="letter_area"]
+position = Vector2( 7, 7 )
+emitting = false
+amount = 50
+lifetime = 1.5
+one_shot = true
+speed_scale = 3.1
+explosiveness = 0.1
+randomness = 0.26
+local_coords = false
+emission_shape = 2
+emission_rect_extents = Vector2( 7, 7 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 18.78
+initial_velocity_random = 0.1
+scale_amount = 1.5
