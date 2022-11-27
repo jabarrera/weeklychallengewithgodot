@@ -1,0 +1,67 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://challenges/week8/gfx/character/stop1.webp" type="Texture" id=1]
+[ext_resource path="res://challenges/week8/gfx/character/stop3.webp" type="Texture" id=2]
+[ext_resource path="res://challenges/week8/gfx/character/stop2.webp" type="Texture" id=3]
+[ext_resource path="res://challenges/week8/gfx/character/right_walk2.webp" type="Texture" id=4]
+[ext_resource path="res://challenges/week8/gfx/character/right_walk1.webp" type="Texture" id=5]
+[ext_resource path="res://challenges/week8/gfx/character/right_attack3.webp" type="Texture" id=6]
+[ext_resource path="res://challenges/week8/gfx/character/right_attack1.webp" type="Texture" id=7]
+[ext_resource path="res://challenges/week8/gfx/character/right_attack2.webp" type="Texture" id=8]
+[ext_resource path="res://challenges/week8/scenes/character/character.gd" type="Script" id=9]
+[ext_resource path="res://common/sfx/clics/click_down.wav" type="AudioStream" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walking",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 21 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 19.5, 4.5 )
+
+[node name="character" type="KinematicBody2D"]
+script = ExtResource( 9 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "attack"
+frame = 5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -6, 1 )
+shape = SubResource( 2 )
+
+[node name="PositionFlip" type="Position2D" parent="."]
+position = Vector2( 6, 1 )
+
+[node name="PositionNotFlip" type="Position2D" parent="."]
+position = Vector2( -6, 1 )
+
+[node name="attack_Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionAttack" type="CollisionShape2D" parent="attack_Area2D"]
+position = Vector2( 0.5, 1.5 )
+shape = SubResource( 3 )
+
+[node name="AttackSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

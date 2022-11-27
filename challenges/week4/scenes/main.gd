@@ -104,5 +104,5 @@ func remove_cards_selection():
 
 func win():
 	$FinishGameSound.play()
-	$finishGame.set("You win!", Color(0.3, 0.5, 0, 0.4))
+	$finishGame.configure("You win!", Color(0.3, 0.5, 0, 0.4), "res://challenges/week4/scenes/main.tscn")
 	$finishGame.show()

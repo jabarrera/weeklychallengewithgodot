@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/425089__neospica__metallic-door-shut.mp3-29c614fc82d1071354bb435f9c6ccabd.mp3str"
+
+[deps]
+
+source_file="res://common/sfx/door/425089__neospica__metallic-door-shut.mp3"
+dest_files=[ "res://.import/425089__neospica__metallic-door-shut.mp3-29c614fc82d1071354bb435f9c6ccabd.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

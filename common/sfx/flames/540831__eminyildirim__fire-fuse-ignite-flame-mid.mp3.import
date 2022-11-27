@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/540831__eminyildirim__fire-fuse-ignite-flame-mid.mp3-87181a7d3e0a05514e5ac65f29a88a50.mp3str"
+
+[deps]
+
+source_file="res://common/sfx/flames/540831__eminyildirim__fire-fuse-ignite-flame-mid.mp3"
+dest_files=[ "res://.import/540831__eminyildirim__fire-fuse-ignite-flame-mid.mp3-87181a7d3e0a05514e5ac65f29a88a50.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

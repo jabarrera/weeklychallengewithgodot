@@ -1,8 +1,11 @@
 extends Node2D
 
-func _on_Button_pressed():
-	get_tree().change_scene("res://challenges/week4/scenes/main.tscn")
+var scene : String
 
-func set(message : String, background_colour : Color):
+func _on_Button_pressed():
+	get_tree().change_scene(scene)
+
+func configure(message : String, background_colour : Color, scene_path : String):
 	$Label.text = message
 	$ColorRect.color = background_colour
+	scene = scene_path

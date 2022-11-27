@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://challenges/week8/gfx/life/life.webp" type="Texture" id=1]
+[ext_resource path="res://challenges/week8/gfx/life/heart.webp" type="Texture" id=2]
+[ext_resource path="res://challenges/week8/gfx/life/life_container.webp" type="Texture" id=3]
+[ext_resource path="res://challenges/week8/scenes/life/life.gd" type="Script" id=4]
+
+[node name="life" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="life_container" type="Sprite" parent="."]
+position = Vector2( -2.14577e-06, -2.98023e-07 )
+scale = Vector2( 1.06, 1.33333 )
+texture = ExtResource( 3 )
+
+[node name="life" type="Sprite" parent="."]
+position = Vector2( -50, 0 )
+texture = ExtResource( 1 )
+offset = Vector2( 50, 0 )
+
+[node name="heart" type="Sprite" parent="."]
+position = Vector2( -71, 0 )
+texture = ExtResource( 2 )
