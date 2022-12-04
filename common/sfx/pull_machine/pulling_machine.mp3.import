@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pulling_machine.mp3-75d0ac58e8b31c19bc9573d853ad8a43.mp3str"
+
+[deps]
+
+source_file="res://common/sfx/pull_machine/pulling_machine.mp3"
+dest_files=[ "res://.import/pulling_machine.mp3-75d0ac58e8b31c19bc9573d853ad8a43.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/191592__leszek-szary__menu-button.mp3-9122ca1cb761f0758ea2348bfcda3d4f.mp3str"
+
+[deps]
+
+source_file="res://common/sfx/button/191592__leszek-szary__menu-button.mp3"
+dest_files=[ "res://.import/191592__leszek-szary__menu-button.mp3-9122ca1cb761f0758ea2348bfcda3d4f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

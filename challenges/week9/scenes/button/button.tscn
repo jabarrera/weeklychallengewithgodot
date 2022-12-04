@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://common/gfx/button/button_up.webp" type="Texture" id=1]
+[ext_resource path="res://common/gfx/button/button_down.webp" type="Texture" id=2]
+[ext_resource path="res://common/gfx/button/button_over.webp" type="Texture" id=3]
+[ext_resource path="res://common/gfx/arrow/arrow.webp" type="Texture" id=4]
+[ext_resource path="res://challenges/week9/scenes/button/button.gd" type="Script" id=5]
+[ext_resource path="res://common/sfx/button/191592__leszek-szary__menu-button.mp3" type="AudioStream" id=6]
+
+[node name="button" type="Node2D"]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+
+[node name="arrow" type="Sprite" parent="."]
+position = Vector2( 59, 15 )
+texture = ExtResource( 4 )
+
+[node name="arrow_button_down" type="Position2D" parent="."]
+position = Vector2( 59, 21 )
+
+[node name="arrow_button_up" type="Position2D" parent="."]
+position = Vector2( 59, 16 )
+
+[node name="ButtonDownSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_TextureButton_button_down"]
+[connection signal="button_up" from="TextureButton" to="." method="_on_TextureButton_button_up"]

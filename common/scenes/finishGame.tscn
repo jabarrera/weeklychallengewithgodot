@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://common/scenes/finishGame.gd" type="Script" id=1]
+[ext_resource path="res://common/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 13
+font_data = ExtResource( 2 )
 
 [node name="finishGame" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,14 +25,16 @@ margin_left = -20.0
 margin_top = 252.0
 margin_right = 1042.0
 margin_bottom = 266.0
+custom_fonts/font = SubResource( 1 )
 text = "Game over!"
 align = 1
 
 [node name="Button" type="Button" parent="."]
-margin_left = 468.0
+margin_left = 428.0
 margin_top = 286.0
-margin_right = 556.0
+margin_right = 584.0
 margin_bottom = 316.0
+custom_fonts/font = SubResource( 2 )
 text = "Try again"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

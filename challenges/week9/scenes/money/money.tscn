@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://common/fonts/advanced_led_board-7.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://challenges/week9/scenes/money/money.gd" type="Script" id=2]
+[ext_resource path="res://common/sfx/clics/click_down.wav" type="AudioStream" id=3]
+[ext_resource path="res://common/sfx/win/615099__mlaudio__magic-game-win-success.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[node name="money" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 148.0
+margin_bottom = 46.0
+custom_colors/font_color = Color( 0.207843, 1, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "100"
+align = 2
+
+[node name="LostMoneySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="GetMoneySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[connection signal="lost_money" from="." to="." method="_on_money_lost_money"]
+[connection signal="win_money" from="." to="." method="_on_money_win_money"]
