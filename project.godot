@@ -19,6 +19,8 @@ config/icon="res://icon.png"
 
 Week4Global="*res://challenges/week4/scenes/Week4Global.gd"
 Launcher="*res://launcher/scenes/main/launcher.gd"
+SaveGame="*res://common/saveGame/save_game.gd"
+TimeConverter="*res://common/timeConverter/time_converter.gd"
 
 [display]
 
