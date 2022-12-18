@@ -37,4 +37,4 @@ margin_bottom = 316.0
 custom_fonts/font = SubResource( 2 )
 text = "Try again"
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]

@@ -1,0 +1,80 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://challenges/week11/scenes/map/map.tscn" type="PackedScene" id=1]
+[ext_resource path="res://challenges/week11/scenes/lives/lives.tscn" type="PackedScene" id=2]
+[ext_resource path="res://challenges/week11/scenes/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://challenges/week11/scenes/main.gd" type="Script" id=4]
+[ext_resource path="res://common/scenes/finishGame.tscn" type="PackedScene" id=5]
+[ext_resource path="res://common/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://challenges/week3/gfx/map/mouse_pointer.png" type="Texture" id=7]
+[ext_resource path="res://common/sfx/clics/click_down.wav" type="AudioStream" id=8]
+[ext_resource path="res://common/sfx/button/beep.mp3" type="AudioStream" id=9]
+[ext_resource path="res://common/sfx/button/191592__leszek-szary__menu-button.mp3" type="AudioStream" id=10]
+[ext_resource path="res://common/sfx/explosion/explosion.wav" type="AudioStream" id=11]
+[ext_resource path="res://common/sfx/win/finish_521640__fupicat__winbanjo.ogg" type="AudioStream" id=12]
+[ext_resource path="res://common/sfx/error/error.wav" type="AudioStream" id=13]
+[ext_resource path="res://common/sfx/clics/vanish.wav" type="AudioStream" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+font_data = ExtResource( 6 )
+
+[node name="main" type="Node"]
+script = ExtResource( 4 )
+
+[node name="map" parent="." instance=ExtResource( 1 )]
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 470, 270 )
+rotation = -0.00425255
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="teleport_mark" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+
+[node name="mouse_pointer" type="Sprite" parent="."]
+
+[node name="lives" parent="." instance=ExtResource( 2 )]
+position = Vector2( 923, 44 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="finishGame" parent="." instance=ExtResource( 5 )]
+
+[node name="teleportation_button" type="Button" parent="."]
+margin_left = 914.0
+margin_top = 97.0
+margin_right = 1014.0
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 1 )
+text = "Teleport"
+
+[node name="sfx" type="Node" parent="."]
+
+[node name="errorSound" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 13 )
+volume_db = -19.44
+
+[node name="teleportMoveSound" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 10 )
+
+[node name="teleportWarningSound" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 9 )
+
+[node name="playerMoveSound" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 8 )
+
+[node name="destructionSound" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 11 )
+volume_db = -7.776
+
+[node name="winSound" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 12 )
+
+[node name="LostLifeSound" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 14 )
+
+[connection signal="jumping" from="player" to="." method="_on_player_jumping"]
+[connection signal="moved" from="player" to="." method="_on_player_moved"]
+[connection signal="life_empty" from="lives" to="." method="_on_lives_life_empty"]
+[connection signal="button_up" from="teleportation_button" to="." method="_on_teleportation_button_button_up"]
