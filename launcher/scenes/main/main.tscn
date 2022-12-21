@@ -38,6 +38,7 @@ margin_left = -13.0
 margin_top = -7.0
 margin_right = 1289.0
 margin_bottom = 732.0
+mouse_filter = 2
 color = Color( 0.101961, 0.101961, 0.101961, 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -92,6 +93,7 @@ margin_left = 48.0
 margin_top = 85.0
 margin_right = 447.0
 margin_bottom = 300.0
+mouse_filter = 2
 expand = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -99,6 +101,7 @@ margin_left = 48.0
 margin_top = 312.0
 margin_right = 447.0
 margin_bottom = 571.0
+mouse_filter = 2
 custom_colors/default_color = Color( 0.686275, 0.686275, 0.686275, 1 )
 custom_fonts/bold_font = SubResource( 2 )
 custom_fonts/normal_font = SubResource( 1 )
