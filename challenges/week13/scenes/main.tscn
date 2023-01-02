@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://common/scenes/finishGame.tscn" type="PackedScene" id=1]
+[ext_resource path="res://challenges/week13/scenes/ball/ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://challenges/week4/gfx/map/background.jpg" type="Texture" id=3]
+[ext_resource path="res://challenges/week13/scenes/hole/hole.tscn" type="PackedScene" id=4]
+[ext_resource path="res://challenges/week13/scenes/main.gd" type="Script" id=5]
+[ext_resource path="res://common/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://common/scenes/leaderBoard/leader_board.tscn" type="PackedScene" id=7]
+[ext_resource path="res://common/sfx/win/finish_521640__fupicat__winbanjo.ogg" type="AudioStream" id=8]
+[ext_resource path="res://common/sfx/whoosh/whoosh.mp3" type="AudioStream" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 6 )
+
+[node name="main" type="Node"]
+script = ExtResource( 5 )
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="maps" type="Node2D" parent="."]
+
+[node name="hole" parent="." instance=ExtResource( 4 )]
+position = Vector2( 29, 18 )
+
+[node name="ball" parent="." instance=ExtResource( 2 )]
+position = Vector2( 29, 48 )
+linear_damp = 1.0
+
+[node name="counter_hits" type="Node2D" parent="."]
+position = Vector2( 844, 23 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="counter_hits"]
+margin_top = 7.0
+margin_right = 96.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 1 )
+text = "Hits: "
+
+[node name="num_hits_label" type="Label" parent="counter_hits"]
+margin_left = 82.0
+margin_top = -5.0
+margin_right = 168.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+
+[node name="finishGame" parent="." instance=ExtResource( 1 )]
+offset = Vector2( 0, 150 )
+transform = Transform2D( 1, 0, 0, 1, 0, 150 )
+
+[node name="leader_board" parent="." instance=ExtResource( 7 )]
+offset = Vector2( 410, 100 )
+transform = Transform2D( 1, 0, 0, 1, 410, 100 )
+
+[node name="sfx" type="Node" parent="."]
+
+[node name="NewRecordSound" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 8 )
+
+[node name="MovingMapsSound" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource( 9 )
+pitch_scale = 0.3
+
+[connection signal="hit" from="ball" to="." method="_on_ball_hit"]

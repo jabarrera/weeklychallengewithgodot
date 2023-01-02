@@ -1,0 +1,209 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://challenges/week13/scenes/maps/golf_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://challenges/week13/scenes/maps/map.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=7]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 35.75, 77.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 40, 30 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 97.5, 70 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 26.25, 45 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 57.5, 47.5 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 47.5, 41.25 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 186.25, 41.25 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 75, 58.125 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 40, 90.5625 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 40, 95.2812 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 55, 39.5 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 55, 46.25 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 80, 46.25 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 55, 67.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 85, 54 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 144, 67 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 85, 54 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 135, 52.5 )
+
+[sub_resource type="Animation" id=20]
+resource_name = "Entering"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1024, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "Exiting"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1024, 0 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1024, 0 ) ]
+}
+
+[node name="map1" type="Node2D"]
+position = Vector2( 1024, 0 )
+script = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 196616, 4, 0, 196617, 8, 0, 196618, 8, 0, 196619, 8, 0, 196620, 8, 0, 196621, 8, 0, 196622, 8, 0, 196623, 8, 0, 196624, 8, 0, 196625, 8, 0, 196626, 7, 0, 262149, 4, 0, 262150, 8, 0, 262151, 8, 0, 262152, 10, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262161, 1, 0, 262162, 12, 0, 262163, 8, 0, 262164, 7, 0, 327685, 2, 0, 327686, 1, 0, 327687, 11, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 9, 0, 327694, 1, 0, 327695, 1, 0, 327696, 1, 0, 327697, 1, 0, 327698, 1, 0, 327699, 1, 0, 327700, 12, 0, 327701, 8, 0, 327702, 8, 0, 327703, 7, 0, 393220, 4, 0, 393221, 10, 0, 393222, 11, 0, 393223, 6, 0, 393229, 2, 0, 393230, 1, 0, 393231, 11, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 21, 0, 393240, 7, 0, 458756, 2, 0, 458757, 11, 0, 458758, 6, 0, 458765, 3, 0, 458766, 0, 0, 458767, 6, 0, 458775, 2, 0, 458776, 5, 0, 524292, 2, 0, 524293, 5, 0, 524311, 2, 0, 524312, 5, 0, 589828, 2, 0, 589829, 5, 0, 589839, 4, 0, 589840, 7, 0, 589847, 2, 0, 589848, 12, 0, 589849, 7, 0, 655364, 3, 0, 655365, 21, 0, 655366, 8, 0, 655367, 8, 0, 655368, 8, 0, 655369, 23, 0, 655370, 13, 0, 655371, 13, 0, 655372, 13, 0, 655373, 13, 0, 655374, 13, 0, 655375, 19, 0, 655376, 14, 0, 655377, 13, 0, 655378, 13, 0, 655379, 13, 0, 655380, 13, 0, 655381, 13, 0, 655382, 22, 0, 655383, 10, 0, 655384, 1, 0, 655385, 5, 0, 720901, 3, 0, 720902, 9, 0, 720903, 1, 0, 720904, 1, 0, 720905, 5, 0, 720911, 2, 0, 720912, 5, 0, 720918, 2, 0, 720919, 1, 0, 720920, 1, 0, 720921, 5, 0, 786438, 2, 0, 786439, 1, 0, 786440, 1, 0, 786441, 5, 0, 786447, 2, 0, 786448, 5, 0, 786454, 2, 0, 786455, 1, 0, 786456, 11, 0, 786457, 6, 0, 851974, 3, 0, 851975, 0, 0, 851976, 0, 0, 851977, 6, 0, 851983, 2, 0, 851984, 5, 0, 851990, 3, 0, 851991, 0, 0, 851992, 6, 0, 917518, 4, 0, 917519, 10, 0, 917520, 12, 0, 917521, 7, 0, 983054, 2, 0, 983055, 1, 0, 983056, 1, 0, 983057, 5, 0, 1048590, 2, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 5, 0, 1114126, 3, 0, 1114127, 0, 0, 1114128, 0, 0, 1114129, 6, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 862.5, 352.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 835, 441 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 892.5, 225 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 788.75, 155 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 723.5, 117.5 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 650.5, 92.25 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 431.25, 60 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 185, 74.875 )
+shape = SubResource( 14 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 125, 106.438 )
+shape = SubResource( 15 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 94, 280.281 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 110, 385.5 )
+shape = SubResource( 17 )
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 143, 423.75 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 270, 489 )
+shape = SubResource( 19 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 399, 517.5 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 400, 400 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 714, 509 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 624, 400 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 535, 623 )
+shape = SubResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 251, 187, 421, 187, 421, 251, 507, 251, 507, 219, 741, 219, 741, 325, 539, 325, 539, 293, 485, 293, 485, 325, 187, 325, 187, 251, 219, 251, 219, 219, 251, 219 )
+
+[node name="ball_start_position" type="Position2D" parent="."]
+position = Vector2( 480, 545 )
+
+[node name="hole_position" type="Position2D" parent="."]
+position = Vector2( 465, 225 )
+
+[node name="Actions" type="AnimationPlayer" parent="."]
+anims/Entering = SubResource( 20 )
+anims/Exiting = SubResource( 21 )
+anims/RESET = SubResource( 22 )
+
+[connection signal="animation_finished" from="Actions" to="." method="_on_Actions_animation_finished"]

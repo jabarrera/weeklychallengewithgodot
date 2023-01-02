@@ -34,7 +34,7 @@ func custom_week_sort(directory_1 : String, directory_2 : String) -> bool:
 	var number_directory_1 = directory_1.replace("week", "").to_int()
 	var number_directory_2 = directory_2.replace("week", "").to_int()
 	
-	return number_directory_1 <= number_directory_2
+	return number_directory_1 >= number_directory_2
 
 #Connections
 func _on_comboBoxWeeks_pressed():
