@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://common/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://challenges/week14/scenes/select_num_players/select_num_players.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 33
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+font_data = ExtResource( 1 )
+
+[node name="select_num_players" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1029.0
+margin_bottom = 606.0
+
+[node name="text" type="Label" parent="Panel"]
+margin_left = 379.0
+margin_top = 216.0
+margin_right = 667.0
+margin_bottom = 232.0
+custom_fonts/font = SubResource( 1 )
+text = "Select num players"
+
+[node name="num_player_slider" type="HSlider" parent="Panel"]
+margin_left = 403.0
+margin_top = 334.0
+margin_right = 632.0
+margin_bottom = 350.0
+min_value = 2.0
+max_value = 4.0
+value = 2.0
+tick_count = 3
+ticks_on_borders = true
+
+[node name="text_num_player" type="Label" parent="Panel"]
+margin_left = 465.0
+margin_top = 263.0
+margin_right = 579.0
+margin_bottom = 306.0
+custom_fonts/font = SubResource( 2 )
+text = "2"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 452.0
+margin_top = 402.0
+margin_right = 580.0
+margin_bottom = 435.0
+custom_fonts/font = SubResource( 3 )
+text = "Let's go"
+
+[connection signal="drag_ended" from="Panel/num_player_slider" to="." method="_on_HSlider_drag_ended"]
+[connection signal="button_up" from="Panel/Button" to="." method="_on_Button_button_up"]

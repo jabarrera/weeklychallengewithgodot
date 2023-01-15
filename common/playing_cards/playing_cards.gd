@@ -1,0 +1,3 @@
+extends Node
+
+enum SPANISH_PLAYING_CARDS_SUIT {COIN, CUP, CLUB, SWORD}

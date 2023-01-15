@@ -22,6 +22,8 @@ Launcher="*res://launcher/scenes/main/launcher.gd"
 SaveGame="*res://common/saveGame/save_game.gd"
 TimeConverter="*res://common/timeConverter/time_converter.gd"
 Mouse="*res://common/mouse/mouse.gd"
+PlayingCards="*res://common/playing_cards/playing_cards.gd"
+Enums="*res://common/enums/enums.gd"
 
 [display]
 

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://challenges/week14/scenes/player/player.gd" type="Script" id=1]
+[ext_resource path="res://common/gfx/spanish_playing_cards/club_1.webp" type="Texture" id=2]
+[ext_resource path="res://common/sfx/error/error.wav" type="AudioStream" id=3]
+[ext_resource path="res://common/sfx/whoosh/whoosh.mp3" type="AudioStream" id=4]
+
+[node name="player" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="cards" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 2 )
+
+[node name="CardsPosition" type="Position2D" parent="."]
+
+[node name="ErrorSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -15.0
+
+[node name="GetCardSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
